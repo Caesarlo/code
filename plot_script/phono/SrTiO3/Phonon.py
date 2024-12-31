@@ -25,9 +25,13 @@ class Phonon:
 
         self.data = {}
         self.attributes = {}
-        self.load_file()
+        self._parse_file()
+        self._parse_content()
 
-    def load_file(self):
+    def __repr__(self):
+        pass
+
+    def _parse_file(self):
         try:
             with open(self.filename, 'r') as f:
                 self.data = yaml.safe_load(f)
@@ -36,7 +40,7 @@ class Phonon:
         except Exception as e:
             raise IOError(f"文件读取错误: {e}")
 
-    def get_attributes(self):
+    def _parse_content(self):
         if self.data is not None:
             self.attributes['nqpoints'] = self.data['nqpoint']  # q点数量
             self.attributes['npath'] = self.data['npath']  # 路径数量
@@ -52,6 +56,18 @@ class Phonon:
                 'frequency_unit_conversion_factor', 1.0)  # 频率单位转换因子
         else:
             raise ValueError("请先加载文件")
+
+    def get_q_positon_data(self):
+        pass
+
+    def get_atom_info(self):
+        pass
+
+    def export_to_json(self):
+        pass
+
+    def visualize_frequencies(self):
+        pass
 
 
 p = Phonon('band.yaml')
