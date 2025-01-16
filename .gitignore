@@ -1,0 +1,29 @@
+# 操作系统文件
+.DS_Store
+Thumbs.db
+
+# IDE 文件
+.vscode/
+.idea/
+
+# 编译文件
+*.o
+*.class
+*.exe
+
+# 日志文件
+*.log
+
+# 依赖管理文件
+node_modules/
+__pycache__/
+venv/
+target/
+
+# 临时文件
+*.tmp
+*.bak
+*.swp
+
+# 数据文件
+*.dat
