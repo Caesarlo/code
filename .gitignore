@@ -27,3 +27,4 @@ target/
 
 # 数据文件
 *.dat
+*.ymal
