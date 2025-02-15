@@ -1,0 +1,12 @@
+def project_to_plane(systems, axis='z', thickness=0.1):
+    projected = []
+    axis_idx = {'x':0, 'y':1, 'z':2}[axis.lower()]
+    
+    for frame in systems:
+        layer_atoms = []
+        for atom in frame.atoms:
+            # 判断原子是否在指定厚度的平面层内
+            if (atom["pos_ref"][axis_idx] % 1) <= thickness:
+                layer_atoms.append(atom)
+        projected.append(layer_atoms)
+    return projected 

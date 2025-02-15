@@ -1,0 +1,23 @@
+def read_poscar(path):
+    system = AtomSystem()
+    # 解析晶胞参数
+    # 解析原子类型和数量
+    # 将分数坐标转换为笛卡尔坐标
+    return system
+
+def read_lammps_trajectory(path):
+    systems = []
+    # 逐帧读取轨迹数据
+    # 处理周期性边界条件（需要处理原子wrap的情况）
+    return systems
+
+def calculate_displacements(system):
+    for atom in system.atoms:
+        # 考虑周期性边界条件的位移计算
+        delta = atom["pos_current"] - atom["pos_ref"]
+        for i in range(3):
+            if delta[i] > 0.5:
+                delta[i] -= 1.0
+            elif delta[i] < -0.5:
+                delta[i] += 1.0
+        atom["displacement"] = np.dot(system.cell, delta)  # 转换为笛卡尔坐标的位移 

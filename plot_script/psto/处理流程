@@ -1,0 +1,18 @@
+def process_data(poscar_path, trajectory_path):
+    # 1. 读取POSCAR文件
+    ref_system = read_poscar(poscar_path)
+    
+    # 2. 读取LAMMPS轨迹文件
+    trajectory = read_lammps_trajectory(trajectory_path)
+    
+    # 3. 对齐数据（确保原子顺序一致）
+    aligned_systems = align_atom_orders(ref_system, trajectory)
+    
+    # 4. 计算位移
+    for frame in aligned_systems:
+        calculate_displacements(frame)
+    
+    # 5. 平面投影处理
+    projected_data = project_to_plane(aligned_systems)
+    
+    return projected_data 

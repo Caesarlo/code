@@ -1,0 +1,18 @@
+visualization_data = {
+    "cell_size": [7.81, 7.81, 78.45],  # 晶胞尺寸
+    "projection_plane": "xy",          # 投影平面
+    "frames": [                        # 各时间帧数据
+        {
+            "time": 0.0,               # 时间点
+            "atoms": [                 # 原子数据
+                {
+                    "type": "Ti",
+                    "position": [0.5, 0.5],       # 投影后的2D位置
+                    "displacement": [0.1, -0.05]  # 投影后的2D位移
+                },
+                # ...其他原子
+            ]
+        },
+        # ...其他时间帧
+    ]
+}
