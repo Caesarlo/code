@@ -29,6 +29,8 @@ target/
 *.dat
 *.ymal
 data/
+废弃/
+test/
 
 # 图片文件
 *.jpg
